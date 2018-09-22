@@ -1,9 +1,5 @@
 console.log("trivia game")
 
-//functions for timmers
-    //set time to _ min
-    //timmer counts down
-    //timmer stops at 00:00
 //show timmer at start, when start pressed questions show
 //when timmer ends questions disappear
 //end of game questions disappear, results show up
@@ -22,17 +18,12 @@ var clockRunning = false;
 var stopwatch = {
     time: 60,
 
-    // reset: function() {
-    //     stopwatch.time = 60;
-    //     //change text display
-    //     $("#display").text("00:00");
-    // },
-
     //set the clock to running aka start
     start: function() {
         if(!clockRunning) {
             intervalId = setInterval(stopwatch.count, 1000);
             clockRunning = true;
+            $("#quiz").show();
         }
     },
 
@@ -40,6 +31,8 @@ var stopwatch = {
     stop: function() {
         clearInterval(intervalId);
         clockRunning = false;
+        $("#quiz").hide();
+        $("#totalScore").show();
     },
 
     //counting display and stops timmr when 0
@@ -48,6 +41,8 @@ var stopwatch = {
         console.log(stopwatch.time);
         if(stopwatch.time === 0) {
             stopwatch.stop();
+            $("#quiz").hide();
+            $("#totalScore").show();
         }
         var converted = stopwatch.timeConverter(stopwatch.time);
         $("#display").text(converted);
@@ -69,3 +64,14 @@ var stopwatch = {
         return minutes + ":" + seconds;
     }
 };
+
+//hide questions
+$("#quiz").hide();
+//hide score
+$("#totalScore").hide();
+
+//display questions
+$("#quiz").this(remove);
+
+
+//
