@@ -23,40 +23,49 @@
     <!--buttons!-->
     <div id="buttons">
         <button id="start">Start</button>
-        <button id="stop">Stop</button>
+        <button id="stop">Done</button>
     </div>
 
     <div id="quiz">
 
         <!--Quesions for Trivia Game-->
         <div id="question"> <br> True or False: ASD means Austism Spectrum Disorder </div>
-        <input class="answer" type="radio"> True <!--answer--> </button>
-        <input type="radio"> False </button>
+        <input class="answer" type="radio" name="black"> True <!--answer--> </button>
+        <input class="option" type="radio" name="black"> False </button>
 
         <div id="question"> <br> Autism affects.. </div>
-        <input type="radio">1 in every 36 children
-        <input type="radio">1 in every 22 children
-        <input class="answer" type="radio">1 in every 59 children <!--answer-->
-        <input type="radio">1 in every 17 children
+        <input class="option" type="radio" name="purple">1 in every 36 children
+        <input class="option" type="radio" name="purple">1 in every 22 children
+        <input class="answer" type="radio" name="purple">1 in every 59 children <!--answer-->
+        <input class="option" type="radio" name="purple">1 in every 17 children
 
         <div id="question"> <br> True or False: There is a medical test to diagnose Autism </div>
-        <input type="radio"> True
-        <input class="answer" type="radio"> False <!--answer-->
+        <input class="option" type="radio" name="green"> True
+        <input class="answer" type="radio" name="green"> False <!--answer-->
 
         <div id="question"> <br> Autism causes challenges in all of the following BUT...</div>
-        <input type="radio"> Social
-        <input type="radio"> Communication
-        <input class="answer" type="radio"> Physical <!--answer-->
-        <input type="radio"> Behavioral
+        <input class="option" type="radio" name="orange"> Social
+        <input class="option" type="radio" name="orange"> Communication
+        <input class="answer" type="radio" name="orange"> Physical <!--answer-->
+        <input class="option" type="radio" name="orange"> Behavioral
 
         <div id="question"> <br> True or False: There is a cure for autism </div>
-        <input type="radio"> True 
-        <input class="answer" type="radio"> False <!--answer-->
+        <input class="option" type="radio" name="yellow"> True 
+        <input class="answer" type="radio" name="yellow"> False <!--answer-->
 
         <div id="question"><br> Does autism affect more boys or girls?</div>
-        <input class="answer" type="radio"> Boys <!--answer-->
-        <input type="radio"> Girls
+        <input class="answer" type="radio" name="blue"> Boys <!--answer-->
+        <input class="option" type="radio" name="blue"> Girls
 
+        <div id="question"><br>Individuals with autism don't make eye contact beacause...</div>
+        <input class="option" type="radio" name="red"> They want to be rude
+        <input class="option" type="radio" name="red"> They don't know where the eyes are located
+        <input class="option" type="radio" name="red"> To make you feel awkward around them
+        <input class="answer" type="radio" name="red"> It makes them uncomfortable <!--answer-->
+
+        <div id="question"><br>True or False: People eventually grow out of autism</div>
+        <input class="option" type="radio" name="teal"> True
+        <input class="answer" type="radio" name="teal"> False <!--answer-->
     </div>
 
     <br>
@@ -64,6 +73,7 @@
     <div id="totalScore">
         <div class="correct">Correct Answers: </div>
         <div class="wrong">Wrong: </div>
+        <div class="unanswered">What happened: </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

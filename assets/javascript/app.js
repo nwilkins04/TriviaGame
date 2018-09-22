@@ -1,4 +1,4 @@
-console.log("trivia game")
+console.log("trivia game loaded")
 
 //show timmer at start, when start pressed questions show
 //when timmer ends questions disappear
@@ -8,6 +8,8 @@ console.log("trivia game")
 window.onload = function(){
     $("#start").on("click", stopwatch.start);
     $("#stop").on("click", stopwatch.stop);
+    //hide score
+    $("#totalScore").hide();
 };
 
 //global variables
@@ -38,7 +40,6 @@ var stopwatch = {
     //counting display and stops timmr when 0
     count: function() {
         stopwatch.time--;
-        console.log(stopwatch.time);
         if(stopwatch.time === 0) {
             stopwatch.stop();
             $("#quiz").hide();
@@ -65,13 +66,43 @@ var stopwatch = {
     }
 };
 
+
+// //counting correct answer vs wrong answer
+var win = 0
+var wrong = 0
+var noAnswer = 0
+// var unanswered = 0
+
+
+// scoring correct vs wrong
+
+// $(".answer").on("click", function() {
+//     win++
+//     $(".correct").text("Correct Answers: " + win)
+// })
+
+// $(".option").on("click", function() {
+//     wrong++
+//     $(".wrong").text("Wrong: " + wrong)
+// })
+
+$("#stop").on("click", function() {
+    $("input").each(function(){
+        if(this.checked === true) {
+            if($(this).hasClass("answer")){
+                win++;
+            } else{
+                wrong++;
+            }
+        }
+    })
+    noAnswer = 8-win-wrong;
+
+    $(".correct").text("Correct answers: " + win);
+    $(".wrong").text("Wrong answers: " + wrong);
+    $(".unanswered").text("What happened: " + noAnswer);
+})
+
+
 //hide questions
 $("#quiz").hide();
-//hide score
-$("#totalScore").hide();
-
-//display questions
-$("#quiz").this(remove);
-
-
-//
